@@ -8,3 +8,4 @@ def reverse(input_string):
 if __name__ == '__main__':
     input_str = 'I like cooking'
     output = reverse(input_str)
+    print(output)
