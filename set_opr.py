@@ -23,4 +23,9 @@ print(one - two)  # equals to 1
 print(two - one)  # equals to 4
 print(one ^ two)  # equals to 1, 4 |-&
 
+# transfer between set and other types
+test = {1, 2, 3}
+list_trans = list(test)
+tuple_trans = tuple(test)
+str_trans = str(test)
 
