@@ -1,3 +1,4 @@
+import math
 # the id of the same number is the same
 a = 1000
 b = 1000
