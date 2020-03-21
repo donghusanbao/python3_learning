@@ -1,3 +1,4 @@
+import math
 if __name__ == '__main__':
     # copy
     list_one = [1, 2, 3]
@@ -15,3 +16,9 @@ if __name__ == '__main__':
     dict_get = {'1': 's', '2': 'b'}
     key_get = list(dict_get.keys())[list(dict_get.values()).index('s')]
     print('key get is ', key_get)
+
+    n = 10000
+    mh = 2 * n + 1
+    e = 0.1
+    result = 4 * mh * math.exp(-e**2*n/8)
+    print(result)
