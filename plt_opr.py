@@ -65,8 +65,17 @@ def draw_step(ax1):
 
 def draw_bar(ax1):
     x = np.arange(5)
-    y = x ** 2
-    ax1.bar(x, y, align='center', width=0.4, alpha=0.5)
+    y1 = x ** 2 + 3
+    y1_std = y1 * 0.2
+    y2 = x * 3 + 2
+    y2_std = y2 * 0.2
+    distance = 0.3
+    width = 0.3
+    ax1.bar(x, y1, width=width, alpha=0.5, yerr=y1_std)
+    ax1.bar(x + distance, y2, width=width, alpha=0.5, yerr=y2_std)
+    ax1.tick_params(axis="x", labelsize=20)
+    ax1.xaxis.set_ticks(x + width/2)
+    ax1.xaxis.set_ticklabels(('A', 'B', 'C', 'D', 'E'))
     plt.show()
 
 
@@ -78,6 +87,20 @@ def draw_fill(ax1):
     plt.show()
 
 
+def draw_stack(ax1):
+    ax1.set_xlim(0, 4)
+    ax1.set_ylim(0, 30)
+    x = np.arange(5)
+    y1 = x ** 1.2
+    y2 = x ** 1.5
+    y3 = x ** 2
+    labels = ['first func', 'second func', 'third func']
+    colors = ['b', 'y', 'g']
+    ax1.stackplot(x, y1, y2, y3, colors=colors, labels=labels)
+    ax1.legend(loc='upper left', fontsize=20)
+    plt.show()
+
+
 if __name__ == '__main__':
     fig = plt.figure(num='fig', figsize=(8, 8), dpi=75, facecolor='#FFFFFF')
     ax = fig.add_subplot(111)
@@ -86,3 +109,4 @@ if __name__ == '__main__':
     # draw_step(ax)
     # draw_bar(ax)
     # draw_fill(ax)
+    # draw_stack(ax)
