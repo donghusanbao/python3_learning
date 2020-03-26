@@ -7,7 +7,7 @@ set_one_compare = set({'a', 'b', 'c'})  # equals to {'a', 'b', 'c'}
 set_two = set('def')  # equals to {'d', 'e', 'f'}
 set_three = set([1, 2, 3, 3])  # equals to {1, 2, 3} remove repeated elements
 set_four = set((1, 2))  # equals to {1, 2}
-set_four_compare = set({(1,2)})  # equals to {(1, 2)}
+set_four_compare = set({(1, 2)})  # equals to {(1, 2)}
 set_five = set({'a': 1, 'b': 2})  # equals to {'a', 'b'} only extract keys
 
 # operations
@@ -28,3 +28,8 @@ test = {1, 2, 3}
 list_trans = list(test)
 tuple_trans = tuple(test)
 str_trans = str(test)
+
+# add set
+animal_set = {'dog', 'cat', 'fish'}
+animal_set.add('bird')
+animal_set.remove('cat')

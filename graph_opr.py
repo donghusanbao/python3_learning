@@ -171,6 +171,7 @@ def draw_minimal_spanning_tree(ax):
     """
     BasicGraphSet.ax_set(ax, 'Minimal Spanning Tree')
     g = nx.Graph()
+    ''''
     g.add_edges_from([
         ('a', 'b', {'weight': 2}),
         ('a', 'c', {'weight': 4}),
@@ -179,6 +180,9 @@ def draw_minimal_spanning_tree(ax):
         ('c', 'e', {'weight': 7}),
         ('d', 'e', {'weight': 5})
     ])
+    '''
+    g.add_weighted_edges_from([('0', '1', 2), ('0', '2', 7), ('1', '2', 3),
+                              ('1', '3', 8), ('1', '4', 5), ('2', '3', 1), ('3', '4', 4)])
     edge_labels = nx.get_edge_attributes(g, 'weight')  # dict
     # to do, something wrong in generating spanning tree
     spanning_tree = nx.minimum_spanning_tree(g, algorithm='kruskal')
